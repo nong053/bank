@@ -27,7 +27,7 @@ func (h accountHandler) NewAccount(w http.ResponseWriter, r *http.Request) {
 		err := json.NewDecoder(r.Body).Decode(&request)
 
 		if err != nil {
-			handlerError(w, err.NewValidateError("request body incorrect format"))
+			handlerError(w, errs.NewValidateError("request body incorrect format"))
 			return
 		}
 
